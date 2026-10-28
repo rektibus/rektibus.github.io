@@ -1,0 +1,56 @@
+<svg width="512" height="512" viewBox="50 50 412 412" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="cut-mask">
+      <rect x="0" y="0" width="512" height="512" fill="white" />
+      
+      <!-- The Central Hole Geometry -->
+      <!-- Strategy: We want the Circle to be HOLE (Black) -->
+      <!-- But user said "Square, Circle and 4 Cuts". 
+           If the Square is the container, and Circle is inside, then Circle is also Yellow?
+           NO, typically Icon = Color Background, White Foreground.
+           So Yellow Square, White Circle.
+           And "4 Cuts" in the Circle? -> White Circle with Black Cuts (Yellow showing through?)
+           OR White Circle with Yellow Cuts (Separated into pieces?)
+           
+           Let's assume: Yellow Square. White Circle *Layer* on top.
+           Cuts are transparent/yellow slots in the White Circle.
+      -->
+      
+      <!-- Let's draw the Circle (+ cuts) as a separate White Path on top of Yellow Square. -->
+      <!-- If cuts are "cuts", they are removed from the White Circle. -->
+    </mask>
+    
+    <!-- Mask for the Circle itself to apply cuts -->
+    <mask id="circle-cuts">
+       <rect width="100%" height="100%" fill="white" />
+       
+       <!-- 4 Diagonal Cuts -->
+       <!-- Center 256, 256. -->
+       <!-- Width of cut: approx 15% of radius? -->
+       <!-- Let's use a rectangle rotated 45deg at corners? -->
+       
+       <!-- Let's try Orthogonal Cuts first (Crosshair). -->
+       <!-- User said "4 cuts". Could be X shape. -->
+       <!-- Deepcoin logo looks like a Coin with 4 indentations. Usually minimal. -->
+       
+       <!-- Let's draw 4 rectangles rotated 45 deg at the 4 quadrants. -->
+       <!-- Offset from center. -->
+       
+       <!-- Adjusting cut width based on standard icon ratio ~ 40px for 512px? -->
+       <rect x="236" y="0" width="40" height="512" fill="black" transform="rotate(45, 256, 256)" />
+       <rect x="236" y="0" width="40" height="512" fill="black" transform="rotate(-45, 256, 256)" />
+       <!-- Wait, that's a generated X. -->
+       
+       <!-- Is it 4 cuts on the PERIMETER? Like a Gear? -->
+       <!-- User said "circle is jagged", implying he saw the circle edge. -->
+       
+       <!-- Let's stick to: Rounded Square + White Circle + 4 cuts in the white circle. -->
+    </mask>
+  </defs>
+  
+  <!-- Background -->
+
+  
+  <!-- Foreground: White Circle with Cuts -->
+  <circle cx="256" cy="256" r="144.0" fill="white" mask="url(#circle-cuts)" />
+</svg>

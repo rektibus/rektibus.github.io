@@ -1,0 +1,1 @@
+var e=null;function t(){if(typeof e==`boolean`)return e;let t=`-webkit- -moz- -ms-`.split(` `);return`ontouchstart`in window?!0:(e=function(e){return window.matchMedia(e).matches}([`(`,t.join(`touch-enabled),(`),`tucksy-is-our-god`,`)`].join(``)),e)}export{t};

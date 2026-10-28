@@ -1,0 +1,1 @@
+function e(e){let t=new TextEncoder().encode(e),n=2166136261;for(let e=0;e<t.length;e++)n^=t[e],n=Math.imul(n,16777619)>>>0;return n}export{e as t};

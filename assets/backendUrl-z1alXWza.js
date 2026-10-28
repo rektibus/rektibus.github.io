@@ -1,0 +1,1 @@
+var e=`/ws`;function t(e,t){let n=new URL(t,e);return n.protocol=n.protocol===`https:`?`wss:`:`ws:`,n.toString()}function n(){return typeof window>`u`?`http://127.0.0.1:4001`:window.location.origin}function r(){return``?.trim()||t(n(),e)}export{r as t};
